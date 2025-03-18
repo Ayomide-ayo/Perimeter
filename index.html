@@ -93,12 +93,14 @@
         if (firstInput.value.trim() === ''  &&  secondInput.value.trim() === '') {
             div.innerHTML = 'The input must not be empty'
             
+        } else {
+            let paramNum = Number(firstInput.value) + Number(secondInput.value)
+            let perimeter = 2 * paramNum
+        
+            div.innerHTML = 'The Perimeter of a Rectangle is :' + ' ' + perimeter
         }
 
-        let paramNum = Number(firstInput.value) + Number(secondInput.value)
-        let perimeter = 2 * paramNum
         
-        div.innerHTML = 'The Perimeter of a Rectangle is :' + ' ' + perimeter
     }
 
     // Assignment 1 

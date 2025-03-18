@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            background-image: url(https://www.wikihow.com/images/thumb/8/8d/Find-the-Perimeter-of-a-Shape-Step-9-Version-4.jpg/v4-460px-Find-the-Perimeter-of-a-Shape-Step-9-Version-4.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(6, 22, 4, 0.6);
+            background-blend-mode: overlay;
+        }
+        .peri{
+            text-align: center;
+            font-size: 15px;
+            color: white;
+            /* margin-top: 70px; */
+            font-family: Arial, Helvetica, sans-serif;
+            /* margin-top: 30px; */
+        }
+        .content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        input{
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 4px;
+            outline: none;
+            text-align: center;
+            /* width: 30%; */
+        }
+        #second_input{
+            margin-top: 20px;
+            /* width: 30%; */
+        }
+        button{
+            background-color: green;
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid green;
+            border-radius: 5px;
+            width: 200px;
+            cursor: pointer;
+        }
+        .display{
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="peri">
+            <h1>The Perimeter of a Rectangle</h1>
+        </div>
+        
+        <div class="content">
+            <input type="text" id="first_input">
+            <div>
+                <input type="text" id="second_input">
+            </div>
+            <button onclick="calcParam()">Calculate</button>
+        </div>
+        <div id="display" class="display">The Perimeter of a Rectangle is : </div>
+    </div>
+</body>
+</html>
+<script>
+
+    let firstInput = document.getElementById('first_input')
+    let secondInput = document.getElementById('second_input')
+    let div = document.getElementById('display')
+    
+
+    function calcParam() {
+
+        if (firstInput.value.trim() === ''  &&  secondInput.value.trim() === '') {
+            div.innerHTML = 'The input must not be empty'
+            
+        }
+
+        let paramNum = Number(firstInput.value) + Number(secondInput.value)
+        let perimeter = 2 * paramNum
+        
+        div.innerHTML = 'The Perimeter of a Rectangle is :' + ' ' + perimeter
+    }
+
+    // Assignment 1 
+
+// Two inputs , one button. Output the value as 
+// “The perimeter of the rectangle is  …“
+
+// A perimeter of a rectangle is calculated as follows: perimeter= 2x(length + width). Write a function which calculates perimeterOfRectangle.
+</script>
